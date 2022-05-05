@@ -1,0 +1,388 @@
+:root {
+  --bg-color-main: #001653;
+  --bg-color-highlight: #373f4e;
+  --link-color: #289ab9;
+}
+
+html, body {
+  /* scrollbar-width: ; */
+  /* font-family: 'Josefin Sans', sans-serif; */
+  font-family: 'Raleway', sans-serif;
+}
+p {
+  letter-spacing: 1px;
+}
+
+.App-link {
+  color: var(--link-color);
+}
+.App {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;  
+  color: #ddd;  
+  text-align: center;
+  background-size: 300% 300%;
+  background-image: linear-gradient(
+        -45deg, 
+        #003274 0%, 
+        #000c1b 100%
+  );  
+  animation: AnimateBG 20s ease infinite;
+}
+
+@keyframes AnimateBG { 
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+/* 
+Color-shifting gradient background Credit: 
+Warren Davies
+https://alvarotrigo.com/blog/animated-backgrounds-css/
+*/
+
+.App-main {
+  height: 100%;
+  width: 100%;
+  scroll-snap-type: y auto;
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+  scrollbar-gutter: 0;
+}
+
+.App-header, .App-footer {
+  width:100vw;
+  }
+.App-footer {
+
+}
+.header-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-size: calc(10px + 2vmin);
+  padding: 0px 16px;
+}
+.header-container * {
+  margin: 0;
+}
+.nav-container {
+  display: flex;
+  align-items: center;
+  padding: 0px 20px;
+  list-style: none;
+}
+.nav-container li {
+  padding: 0 12px;
+  font-size: calc(10px + 1.5vmin);
+  cursor: pointer;
+  transition: all .15s ease-in-out;
+}
+.nav-container li svg {
+  height:32px;
+  width: 32px;
+  /* stroke: black; */
+  fill: white;
+  transition: all 50ms ease-in-out;
+}
+.nav-container li:hover, .nav-container li:hover svg {
+  color: var(--link-color);
+  fill: var(--link-color);
+  font-style: italic;
+} 
+
+
+.section-container {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  z-index: 1;
+
+  height: 101%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.section-container:nth-of-type(odd) {
+  background-color: rgba(255,255,255, .05);
+  box-shadow: 0px -10px 12px -5px rgba(0,0,0,.5);
+}
+.section-container:nth-of-type(even) {
+  background-color: rgba(0,0,0,.1);
+  box-shadow: 0px -10px 12px rgba(0,0,0,.5);
+}
+
+.block-center {
+  max-width: min(75%, 950px);
+}
+.section-block-flex {
+  height: 85%;
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.section-block-grid-2 {
+  height: 85%;
+  width: 95%;
+  margin: 16px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 45%);
+  justify-content: center;
+}
+
+.home-container {
+  z-index: 10;
+  font-size: 1.4em;
+}
+
+.home-container h3 {
+  margin: 0;
+  margin-bottom: -8px;
+  letter-spacing: 6px;
+} 
+.home-container h5 {
+  margin: 0;
+  font-style: italic;
+}
+.home-container h1 {
+  margin: 0;
+} 
+.home-container h4 {
+  margin: 0;
+  font-weight:normal;
+  letter-spacing: -1px;
+}
+.iama-container {
+  margin-top: 8px;
+  width:fit-content;
+  height: fit-content;
+  position: relative;
+}
+.iama-list {
+  height: 5.8em;
+  overflow: hidden;
+  opacity: 35%;
+  position: relative;
+  font-size: 1rem;
+  text-align: justify;
+}
+.iama {
+  width: 100%;
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-44%);
+  font-size: 2em;
+  font-weight:bold;
+  text-shadow: 0 0 25px white;
+}
+
+
+.iama-list div {
+  text-align: justify;
+  letter-spacing: 3px;
+  line-height: 1.3em;
+  /* display: inline; */
+  transform: translateY(0%);
+  animation: scroll-animation 60s ease-out alternate infinite;
+}
+@keyframes scroll-animation {
+  from {transform: translateY(0%)}
+  to {transform: translateY(calc(5.8em - 100%))}
+}
+
+
+
+.about-container {
+  text-align: justify;
+}
+.about-container .primary-img {
+  height:75%;
+  border: solid 2px white;
+  background-image: url('./assets/Agra-India.jpg');
+  background-size: 165%;
+  background-position: center center;
+} .about-container .primary-img img {
+  height:100%;
+  /* max-width:50%; */
+  opacity: 0;
+}
+.about-container .about-info {
+  max-width: 65%;
+  padding: 8px;
+}
+.about-container h3, .about-container p {
+  margin: 8px auto;
+}
+
+.projects-container {
+  height: fit-content;
+}
+.project-tile {
+  width:95vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: start;
+  position: relative;
+  height: fit-content;
+  margin: 10px auto 24px auto;
+  padding: 8px;
+}
+.project-info-block { 
+  text-align: justify;
+  width: 50%;
+  transform: translate(25%,0);
+  line-height: 1.3em;
+}
+.project-tile-description {
+  margin: 8px 0 12px 0;
+  padding: 16px;
+  background: rgb(44 66 94);
+  box-shadow: 4px 4px 8px -4px black;
+}
+.skills-row {
+  text-align: left;
+  width: 75%;
+  display: flex; 
+  justify-content: start;
+  align-items: center;
+}
+.skills-row > div {
+  margin-right: 8px;
+}
+.skill-tag {
+  display: inline-block;
+  padding: 1px 5px; 
+  margin: 2px; 
+  border: solid thin gray;
+  /* border-radius: 8px; */
+}
+
+.project-tile .bg-img {
+  border-left: solid 1px white;
+  height: min(335px, 95vh);
+  width: 50%;
+  background-size: 100%;
+  background-position: top center;
+  filter: brightness(30%) blur(1px) contrast(1.2) grayscale(.5);
+  z-index:-1; 
+  transition: filter .5s ease-in-out, background-size 1s ease-in-out;
+}  
+.project-tile:hover .project-tile-description {
+  box-shadow: 4px 4px 8px black;
+  transition: all .5s ease-in-out;
+}
+.project-tile:hover .bg-img {
+  filter: brightness(100%) blur(0px);
+  background-size: 120%;
+} 
+.project-tile-links  {
+  margin-top: 10px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+} 
+.project-tile-links div {
+  margin-right: 10px;
+}
+.project-tile-links a svg {
+  width: 20px;
+  height: 20px;
+  color:white;
+  margin:0 2px;
+  transition: all .2s ease-in-out;
+}
+.project-tile-links a:hover svg {
+  color: var(--link-color);
+}
+#proj-set-game {
+  background-image: url("assets/game-of-Set.jpg");
+}  
+#proj-birding-tracker {
+  background-image: url("assets/birding-tracker.jpg");
+}  
+#proj-foodle {
+  background-image: url("assets/foodle.jpg");
+}  
+
+
+/* PROJECTS V1 */
+/* .projects-container {
+  height: fit-content;
+}
+.project-tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  position: relative;
+  height: fit-content;
+  max-width: 85%;
+  border: solid 2px gray;
+  margin: 8px auto;
+  padding: 8px;
+}
+.project-tile img {
+  max-width: 85%; 
+  max-height: 65%;
+}
+.project-tile .bg-img {
+  position:absolute;
+  top:0;
+  height: 100%;
+  width:100%;
+  background-size: cover;
+  background-position: center center;
+  filter: brightness(30%) blur(1px);
+  z-index:-1; 
+}
+#proj-set-game {
+  background-image: url("assets/game-of-Set.jpg");
+}
+#proj-birding-tracker {
+  background-image: url("assets/birding-tracker.jpg");
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: 1px 3px; 
+  margin: 0 2px; 
+  border: solid thin gray;
+  border-radius: 8px;
+}
+
+ */
+
+
+ /* SHAPE EFFECTS */
+/* 
+ .home-container::after {
+  content: "";
+  position:absolute;
+  height: 100%;
+  width:100%;
+  right:0;
+  background: rgb(255,255,255);
+  background: linear-gradient(270deg, rgba(255,255,255,.3) 0%, rgba(255,255,255,0) 78%);
+  z-index:-1;
+  clip-path: polygon(100% 0, 25% 50%, 100% 100%);
+}
+.about-container::after {
+    content: "";
+  position:absolute;
+  height: 100%;
+  width:65%;
+  left:0;
+  background: rgb(255,255,255,.25);
+  background: linear-gradient(90deg, rgba(255,255,255,.3) 0%, rgba(255,255,255,0) 105%);
+  z-index:-1;
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+} */
