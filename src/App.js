@@ -29,7 +29,7 @@ function App() {
       </header>
 
       <main className="App-main">
-        <Home />
+        <Home id='home' />
         <About id='about' />
         <Projects id='projects' />
         <Resume id='resume' />

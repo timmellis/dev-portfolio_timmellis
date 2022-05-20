@@ -1,6 +1,7 @@
 import React from 'react';
 import ProjectTile from './ProjectTile'
 import Fade from 'react-reveal/Fade';
+import {Row, Col, Container} from 'react-bootstrap'
 
 function Projects(props) {
 
@@ -11,7 +12,7 @@ function Projects(props) {
     {
       id: 'proj-set-game',
       title: 'The Game of Set',
-      description: 'The classic card game "Set". Fully playable, built entirely with Javascript, CSS and HTML. After building out the project, I added a number of additional features not found in the real game, including: score keeping, sets found tracker, difficulty level selection, and hints.',
+      description: 'The classic card game "Set". Fully playable, built entirely with Javascript, CSS and HTML. After building out the project, I added a number of additional automated features not typically found in the real game, including: difficulty level selection, score keeping, a "Sets found" tracker, and computer-generated hints.',
       summary: `Interactive game built using only HTML, CSS and Javascript.`,
       img: 'game-of-Set.jpg',
       skills: ['html','css','javascript','GSAP plugin'], 
@@ -45,30 +46,31 @@ function Projects(props) {
 
 
   return (
-    <div className='section-container projects-container' id={props.id}>
+    <Container fluid className='section-container projects-container' id={props.id}>
+      <Row>
         <Fade left exit>
         <h2>Projects</h2>
         </Fade>
-        
-
-
+      </Row>
+      
         {projects.map((project, i) => (
-        <Fade bottom delay={i*100 + 250}>
-          <ProjectTile 
-          key={i}
-          id={project.id}
-          title={project.title}
-          description={project.description}
-          summary={project.summary}
-          img={project.img}
-          skills={project.skills}
-          url={project.url}
-          github={project.github}
-          />
-      </Fade>
+        <Row>
+          <Fade bottom delay={i*100 + 250}>
+            <ProjectTile 
+            key={i}
+            id={project.id}
+            title={project.title}
+            description={project.description}
+            summary={project.summary}
+            img={project.img}
+            skills={project.skills}
+            url={project.url}
+            github={project.github}
+            />
+          </Fade>
+        </Row>
           ))}
-
-      </div>
+    </Container>
   );
 }
 

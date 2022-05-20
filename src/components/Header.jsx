@@ -1,13 +1,13 @@
 import React from 'react';
-import Nav from './Nav'
+import NavMenu from './NavMenu'
 
 function Header(props) {
   return (
   <div className='header-container'>
-    <div className='header-title'>
+    {/* <div className='header-title'>
       <h1>Tim Ellis</h1>
-    </div>
-    <Nav />  
+    </div> */}
+    <NavMenu />  
   </div>
   );
 }
