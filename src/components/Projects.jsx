@@ -41,6 +41,17 @@ function Projects(props) {
       url: 'https://ancient-forest-25395.herokuapp.com/',
       github: 'https://github.com/timmellis/Foodle-Back' 
     },
+    // 4: GREEN THUMB (Houseplant care app)
+    {
+      id: 'proj-greenthumb',
+      title: 'Green Thumb',
+      description: `A food-themed Instagram clone for sharing food glamour shots! This application was built as part of a group project during the General Assembly: Software Engineering Intensive in 2022. `, 
+      summary: 'A mobile-responsive full-stack web application built in React with React-Bootstrap, and using a DjangoREST database with SimpleJWT authorization.',
+      img: 'GreenThumb.jpg',
+      skills: ['html','css','js','react','node','bootstrap','django','python','postgres','simpleJWT'],
+      url: 'https://timmellis-greenthumb.netlify.app/',
+      github: 'https://github.com/timmellis/green_thumb_frontend' 
+    },
 
   ]
 
@@ -49,7 +60,7 @@ function Projects(props) {
     <Container fluid className='section-container projects-container' id={props.id}>
       <Row>
         <Fade left exit>
-        <h2>Projects</h2>
+        <h2 className='section-title'>Projects</h2>
         </Fade>
       </Row>
       

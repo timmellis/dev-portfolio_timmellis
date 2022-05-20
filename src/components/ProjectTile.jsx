@@ -16,7 +16,7 @@ function ProjectTile(props) {
 
       <div className='project-info-block'>
       
-        <h3>{props.title}</h3>
+        <h4>{props.title}</h4>
         <div className='project-tile-description'>
           <p>{props.description}</p>
           <p>{props.summary}</p>

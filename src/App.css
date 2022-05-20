@@ -75,6 +75,7 @@ https://alvarotrigo.com/blog/animated-backgrounds-css/
   scroll-snap-type: y auto;
   scroll-behavior: smooth;
   overflow-y: scroll;
+  overflow-x: hidden;
   scrollbar-gutter: 0;
 }
 
@@ -115,7 +116,7 @@ https://alvarotrigo.com/blog/animated-backgrounds-css/
   width: 28px;
   margin: 0 5px;
   fill: white;
-  transition: all 50ms ease-in-out;
+  transition: all 150ms ease-in-out;
   cursor: pointer;
 }
 @media (max-width: 768px) {
@@ -126,7 +127,7 @@ https://alvarotrigo.com/blog/animated-backgrounds-css/
   }
 }
 
-.nav-container a:hover, .nav-container span:hover svg {
+.nav-container a:hover, .nav-container span svg:hover {
   color: var(--link-color) !important;
   fill: var(--link-color);
   font-style: italic;
@@ -153,6 +154,15 @@ https://alvarotrigo.com/blog/animated-backgrounds-css/
   background-color: rgba(0,0,0,.1);
   box-shadow: 0px -10px 12px rgba(0,0,0,.5);
 }
+/* .section-container:last-of-type {
+  background-color: rgba(0,0,0,.1);
+  box-shadow: none;
+} */
+
+.section-title {
+  margin-top: 16px;
+  text-transform: uppercase;
+}
 
 .block-center {
   max-width: min(75%, 950px);
@@ -164,6 +174,7 @@ https://alvarotrigo.com/blog/animated-backgrounds-css/
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
+  
 }
 
 .section-block-grid-2 {
@@ -255,7 +266,7 @@ https://alvarotrigo.com/blog/animated-backgrounds-css/
 
 
 
-.about-container {
+.about-container, .contact-container {
   padding: 2em;
   display: flex;
   flex-direction: column;
@@ -338,7 +349,7 @@ a.about-circus-hover, a.about-circus-hover:visited {
   margin: 12px;
 }
 .project-tile {
-  width:95vw;
+  width:100%;
   display: flex;
   flex-direction: row;
   justify-content: start;
@@ -349,9 +360,9 @@ a.about-circus-hover, a.about-circus-hover:visited {
   padding: 8px;
 }
 .project-info-block { 
-  text-align: justify;
+  text-align: left;
   width: 50%;
-  transform: translate(15%,0);
+  transform: translate(10%,0);
   line-height: 1.3em;
 }
 .project-tile-description {
@@ -427,6 +438,9 @@ a.about-circus-hover, a.about-circus-hover:visited {
 #proj-foodle {
   background-image: url("assets/foodle.jpg");
 }  
+#proj-greenthumb {
+  background-image: url("assets/GreenThumb.jpg");
+}  
 
 @media (max-width: 768px) {
   .projects-container {
@@ -468,75 +482,89 @@ a.about-circus-hover, a.about-circus-hover:visited {
 }
 
 
-/* PROJECTS V1 */
-/* .projects-container {
-  height: fit-content;
+.contact-container {
+  height: calc(100vh - 56px);
+  width: 100%;
+  position:relative;
+  padding: 0;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-.project-tile {
+.contact-header-row {
+  height: 8em;
+}
+.contact-container .contact-content {
+  width:85%;
+  margin: 0 auto;
+}
+
+.btn, .btn:visited {
+  margin: 8px 16px;
+  border-radius: 0;
+  border: solid 2px white;
+  background: none;
+  opacity: 0.85;
+  text-transform: uppercase;
+}
+.btn.resume-btn {
+  color: white;
+  background-color: rgba(200,225,255,.25);
+}
+.btn:hover, .btn:active {
+  background-color: var(--link-color);
+  border: solid 2px white;
+  font-style: italic;
+  font-weight:bold;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 0;
+  }
+}
+
+.contact-main-col {
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  align-items: center;
-  position: relative;
+  justify-content: space-between;
+}
+
+.footer-container {
   height: fit-content;
-  max-width: 85%;
-  border: solid 2px gray;
-  margin: 8px auto;
-  padding: 8px;
+  overflow-x: hidden;
+  position: relative;
+  text-align: center;
 }
-.project-tile img {
-  max-width: 85%; 
-  max-height: 65%;
+img.footer-img {
+  width: 100%;
+  /* height: fit-content; */
+  opacity: .25;
 }
-.project-tile .bg-img {
-  position:absolute;
-  top:0;
-  height: 100%;
-  width:100%;
-  background-size: cover;
-  background-position: center center;
-  filter: brightness(30%) blur(1px);
-  z-index:-1; 
-}
-#proj-set-game {
-  background-image: url("assets/game-of-Set.jpg");
-}
-#proj-birding-tracker {
-  background-image: url("assets/birding-tracker.jpg");
-}
-
-.skill-tag {
-  display: inline-block;
-  padding: 1px 3px; 
-  margin: 0 2px; 
-  border: solid thin gray;
-  border-radius: 8px;
-}
-
- */
-
-
- /* SHAPE EFFECTS */
-/* 
- .home-container::after {
-  content: "";
-  position:absolute;
-  height: 100%;
-  width:100%;
-  right:0;
-  background: rgb(255,255,255);
-  background: linear-gradient(270deg, rgba(255,255,255,.3) 0%, rgba(255,255,255,0) 78%);
-  z-index:-1;
-  clip-path: polygon(100% 0, 25% 50%, 100% 100%);
-}
-.about-container::after {
-    content: "";
-  position:absolute;
-  height: 100%;
-  width:65%;
-  left:0;
-  background: rgb(255,255,255,.25);
-  background: linear-gradient(90deg, rgba(255,255,255,.3) 0%, rgba(255,255,255,0) 105%);
-  z-index:-1;
-  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
-} */
+.footer-text {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 20px 0 15px 0;
+  background-image: linear-gradient(0deg, rgba(0,0,0,.75), transparent);}
+  
+  .footer-container span svg {
+    height:24px;
+    width: 24px;
+    margin: 5px 5px 0 5px;
+    fill: white;
+    transition: all 150ms ease-in-out;
+    cursor: pointer;
+  }
+  .footer-container span:hover svg {
+  fill: var(--link-color);
+} 
+  @media (max-width: 768px) {
+    .footer-container span svg {
+      height: 20px;
+      width: 20px;
+      margin: 4px 5px;
+    }
+  }
+  

@@ -40,7 +40,7 @@ function About(props) {
     <Container fluid className='section-container about-container' id={props.id} >
       <Row>
         <Fade top>
-          <h2>About Me</h2>
+          <h2 className='section-title'>About Me</h2>
         </Fade>
       </Row>
 

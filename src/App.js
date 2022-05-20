@@ -32,14 +32,14 @@ function App() {
         <Home id='home' />
         <About id='about' />
         <Projects id='projects' />
-        <Resume id='resume' />
+        {/* <Resume id='resume' /> */}
         <Contact id='contact' />
 
+        {/* <Footer /> */}
       </main>
 
-      <footer className="App-footer">
-        {/* <Footer /> */}
-      </footer>
+      {/* <footer className="App-footer">
+      </footer> */}
     </div>
   );
 }
