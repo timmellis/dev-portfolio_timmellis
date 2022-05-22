@@ -1,6 +1,9 @@
 import React from 'react';
 // import {useNavigate} from 'react-router-dom'
 import {Navbar, Nav, Container} from 'react-bootstrap'
+import splitlogo64 from '../assets/split-logo-64.png' 
+import Tlogo from '../assets/T-logo.png' 
+import Tkeylogo from '../assets/T-key-logo.png' 
 
 const NavMenu = () => {
 
@@ -15,7 +18,7 @@ const NavMenu = () => {
     <Navbar collapseOnSelect expand="md" variant='dark'>
       <Container>
         <Navbar.Brand>
-          Tim Ellis
+          <img src={Tkeylogo} height='25px' style={{transform:'translateY(-25%)', opacity:'90%'}} /> im Ellis
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse className='justify-content-end' id='responsive-navbar-nav'>
@@ -25,7 +28,7 @@ const NavMenu = () => {
             <Nav.Link href='/' id='nav-about'  onClick={(e)=>scrollTo(e, 'about')}>About</Nav.Link>
             <Nav.Link href='/' id='nav-projects' onClick={(e)=>scrollTo(e, 'projects')}>Projects</Nav.Link>
             <Nav.Link href='/' id='nav-contact' onClick={(e)=>scrollTo(e, 'contact')}>Contact</Nav.Link>
-            <Nav.Link href='/' id='nav-resume' onClick={(e)=>scrollTo(e, 'resume')}>Resume</Nav.Link>
+            <Nav.Link href='/' id='nav-resume' onClick={(e)=>scrollTo(e, 'contact')}>Resume</Nav.Link>
             <Container>
 
               {/* github svg */}

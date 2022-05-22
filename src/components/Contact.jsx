@@ -20,8 +20,8 @@ function Contact(props) {
         <Row className='align-items-center'>
           <Col className='contact-main-col'>
 
-            <div className='contact-content'>
-              <Fade bottom delay='250'>
+            <div className='contact-content block-shift-by-nav'>
+              <Fade right delay='250'>
                 <h2>Tim Ellis</h2>
                 <h4 style={{ fontStyle: 'italic' }}><BiMap /> Boston, MA</h4>
                 <br />
@@ -29,8 +29,8 @@ function Contact(props) {
                 <p>Looking to hire or collaborate with another developer? I'd love to chat! </p>
 
                 <div>
-                  {/* <Button className='resume-btn' onClick={()=>window.open(`${process.env.PUBLIC_URL}/Tim_Ellis_Resume_2022.pdf`, '_blank')}>Resume</Button> */}
-                  <Button className='resume-btn' onClick={() => window.open('https://docs.google.com/document/d/13vQF1dpcQwVSTBRGJ9xraHSGgh66CSpD-xw5B99Ahmo/export?format=pdf', '_blank')}><FaFileDownload /> Resume</Button>
+                  <Button className='resume-btn' onClick={()=>window.open(`${process.env.PUBLIC_URL}/Tim_Ellis_Resume_2022.pdf`, '_blank')}><FaFileDownload /> Resume (hosted PDF doc)</Button>
+                  <Button className='resume-btn' onClick={() => window.open('https://docs.google.com/document/d/13vQF1dpcQwVSTBRGJ9xraHSGgh66CSpD-xw5B99Ahmo/export?format=pdf', '_blank')}><FaFileDownload /> Resume (Google export)</Button>
                   <Button className='contact-btn' onClick={() => window.open('mailto:tim.m.ellis@gmail.com', '_blank')}><AiOutlineMail /> Contact</Button>
                 </div>
 
@@ -42,7 +42,9 @@ function Contact(props) {
           </Col>
         </Row>
         <Row>
-          <Footer />
+          <Fade bottom delay='250'>
+            <Footer />
+          </Fade>
         </Row>
       </Container>
   );

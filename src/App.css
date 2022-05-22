@@ -2,6 +2,8 @@
   --bg-color-main: #001653;
   --bg-color-highlight: #373f4e;
   --link-color: #289ab9;
+
+  --nav-height: -40px;
 }
 
 /* Scrollbar width */
@@ -29,12 +31,6 @@ html, body {
   /* font-family: 'Josefin Sans', sans-serif; */
   font-family: 'Raleway', sans-serif;
   
-}
-p {
-  letter-spacing: 1px;
-}
-img {
-  max-height: 75vh;
 }
 
 .App-link {
@@ -68,7 +64,6 @@ Color-shifting gradient background Credit:
 Warren Davies
 https://alvarotrigo.com/blog/animated-backgrounds-css/
 */
-
 .App-main {
   height: 100%;
   width: 100%;
@@ -79,29 +74,64 @@ https://alvarotrigo.com/blog/animated-backgrounds-css/
   scrollbar-gutter: 0;
 }
 
+
+
+/* GENERICS */
+p {
+  letter-spacing: 1px;
+}
+img {
+  max-height: 75vh;
+}
+
+.section-container {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  z-index: 1;
+  min-height: 101%;
+  position: relative;
+}
+.section-container:nth-of-type(odd) {
+  background-color: rgba(255,255,255, .05);
+  box-shadow: 0px -10px 12px -5px rgba(0,0,0,.5);
+}
+.section-container:nth-of-type(even) {
+  background-color: rgba(0,0,0,.1);
+  box-shadow: 0px -10px 12px rgba(0,0,0,.5);
+}
+
+.section-title {
+  margin-top: 16px;
+  text-transform: uppercase;
+}
+
+.block-center {
+  max-width: min(75%, 950px);
+}
+.block-shift-by-nav {
+  transform: translateY( var(--nav-height) );
+}
+.section-block-flex {
+  height: 85%;
+  width: 95%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.section-block-grid-2 {
+  height: 85%;
+  width: 95%;
+  margin: 16px auto;
+  display: grid;
+  grid-template-columns: repeat(2, 45%);
+  justify-content: center;
+}
+
+/* HEADER AND NAV */
 .App-header, .App-footer {
   width:100vw;
   }
-.App-footer {
-
-}
-/* .header-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  font-size: calc(10px + 2vmin);
-  padding: 0px 16px;
-}
-.header-container * {
-  margin: 0;
-} */
-/* .nav-container {
-  display: flex;
-  align-items: center;
-  padding: 0px 20px;
-  list-style: none;
-}*/
 .nav-container a {
   padding: 0 12px;
   font-size: .85em;
@@ -119,7 +149,21 @@ https://alvarotrigo.com/blog/animated-backgrounds-css/
   transition: all 150ms ease-in-out;
   cursor: pointer;
 }
+.nav-container a:hover, .nav-container span svg:hover {
+  color: var(--link-color) !important;
+  fill: var(--link-color);
+  font-style: italic;
+  font-weight:bold;
+} 
 @media (max-width: 768px) {
+  .nav-container a {
+    color:white;
+    font-size:1em;
+    padding: 4px;
+  }
+  .navbar-dark .navbar-nav .nav-link {
+    color: white;
+  }
   .nav-container span svg {
     height: 20px;
     width: 20px;
@@ -127,73 +171,13 @@ https://alvarotrigo.com/blog/animated-backgrounds-css/
   }
 }
 
-.nav-container a:hover, .nav-container span svg:hover {
-  color: var(--link-color) !important;
-  fill: var(--link-color);
-  font-style: italic;
-  font-weight:bold;
-} 
 
-.section-container {
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-  z-index: 1;
-
-  min-height: 101%;
-  position: relative;
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; */
-}
-.section-container:nth-of-type(odd) {
-  background-color: rgba(255,255,255, .05);
-  box-shadow: 0px -10px 12px -5px rgba(0,0,0,.5);
-}
-.section-container:nth-of-type(even) {
-  background-color: rgba(0,0,0,.1);
-  box-shadow: 0px -10px 12px rgba(0,0,0,.5);
-}
-/* .section-container:last-of-type {
-  background-color: rgba(0,0,0,.1);
-  box-shadow: none;
-} */
-
-.section-title {
-  margin-top: 16px;
-  text-transform: uppercase;
-}
-
-.block-center {
-  max-width: min(75%, 950px);
-}
-.section-block-flex {
-  height: 85%;
-  width: 95%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  
-}
-
-.section-block-grid-2 {
-  height: 85%;
-  width: 95%;
-  margin: 16px auto;
-  display: grid;
-  grid-template-columns: repeat(2, 45%);
-  justify-content: center;
-}
+/* HOME/SPLASH PAGE */
 
 .home-container {
   z-index: 10;
   font-size: 1.4em;
 }
-.home-block-center {
-  transform: translateY(-24);
-}
-
 .home-container h3 {
   margin: 0;
   margin-bottom: -8px;
@@ -368,7 +352,7 @@ a.about-circus-hover, a.about-circus-hover:visited {
 .project-tile-description {
   margin: 8px 0 12px 0;
   padding: 16px;
-  background: rgb(44 66 94);
+  background: rgb(0 30 68 / 85%);
   box-shadow: 4px 4px 8px -4px black;
 }
 .skills-row {
@@ -395,7 +379,7 @@ a.about-circus-hover, a.about-circus-hover:visited {
   height: min(335px, 95vh);
   width: 50%;
   background-size: 100% 100%;
-  background-position: top center;
+  background-position: 0 0;
   filter: brightness(30%) blur(1px) contrast(1.2) grayscale(.5);
   z-index:-1; 
   transition: filter .5s ease-in-out, background-size 1s ease-in-out;
@@ -408,6 +392,7 @@ a.about-circus-hover, a.about-circus-hover:visited {
   .project-tile:hover .bg-img {
     filter: brightness(100%) blur(0px);
     background-size: 120% 120%;
+    background-position: 0 0;
   } 
 }
 .project-tile-links  {
@@ -560,11 +545,25 @@ img.footer-img {
   .footer-container span:hover svg {
   fill: var(--link-color);
 } 
-  @media (max-width: 768px) {
-    .footer-container span svg {
-      height: 20px;
-      width: 20px;
-      margin: 4px 5px;
-    }
+@media (max-width: 768px) {
+  .footer-container {
+    height:200px;
+    position:relative;
   }
+  img.footer-img {
+    height:160px;
+    width:auto;
+    position: absolute;
+    bottom:25px;
+    left: -40%;
+  }
+  .footer-text {
+    font-size: .85em;
+  }
+  .footer-container span svg {
+    height: 20px;
+    width: 20px;
+    margin: 4px 5px;
+  }
+}
   

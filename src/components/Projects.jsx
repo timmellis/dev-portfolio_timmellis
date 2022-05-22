@@ -34,7 +34,7 @@ function Projects(props) {
     {
       id: 'proj-foodle',
       title: 'Project Foodle',
-      description: `A food-themed Instagram clone for sharing food glamour shots! This application was built as part of a group project during the General Assembly: Software Engineering Intensive in 2022. `, 
+      description: `A food-themed Instagram clone for sharing food glamour shots! This application was built as part of a group project during the General Assembly: Software Engineering Intensive in 2022.`, 
       summary: 'A Ful-stack web application built with React, using Express and Postgres to build and connect to a pSQL database using Json Web Token authorization.',
       img: 'foodle.jpg',
       skills: ['html','css','js','react','express','node','postgres','psql','jwt'],
@@ -45,7 +45,7 @@ function Projects(props) {
     {
       id: 'proj-greenthumb',
       title: 'Green Thumb',
-      description: `A food-themed Instagram clone for sharing food glamour shots! This application was built as part of a group project during the General Assembly: Software Engineering Intensive in 2022. `, 
+      description: `A mobile-friendly app for keeping track of your houseplants, including a community-built database of basic care instructions, as well as personalized details for your houseplants, their locations in your home, and app-generating watering and care schedules.`, 
       summary: 'A mobile-responsive full-stack web application built in React with React-Bootstrap, and using a DjangoREST database with SimpleJWT authorization.',
       img: 'GreenThumb.jpg',
       skills: ['html','css','js','react','node','bootstrap','django','python','postgres','simpleJWT'],
@@ -65,7 +65,7 @@ function Projects(props) {
       </Row>
       
         {projects.map((project, i) => (
-        <Row>
+        <Row style={{maxWidth:'1250px', margin:'0 auto'}}>
           <Fade bottom delay={i*100 + 250}>
             <ProjectTile 
             key={i}

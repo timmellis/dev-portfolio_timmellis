@@ -13,7 +13,7 @@ function Home(props) {
     <Container fluid className='section-container home-container'  id={props.id}>
       <Row className='justify-content-center align-items-center' style={{height:'100vh'}}>
 
-      <div className='block-center home-block-center'>
+      <div className='block-center home-block-center block-shift-by-nav'>
         <Fade bottom delay='50'>
           <h3>Hi. I'm</h3>
         </Fade>
