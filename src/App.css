@@ -286,7 +286,7 @@ img {
   background-image: url('./assets/Fire-juggling.jpg');
   background-size: cover;
   background-position: center center;
-  transition: all .8s ease-in-out;
+  transition: all .65s ease-in-out;
   opacity: 0;
   z-index:10;
 }

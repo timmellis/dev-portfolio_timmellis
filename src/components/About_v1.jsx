@@ -11,6 +11,12 @@ function About(props) {
   }
   const circusOver = () => {
     document.querySelector(".circus-img-div").style.opacity=1
+    // const loop = () => {
+    //   setTimeout(() => document.querySelector(".circus-img-div").style.backgroundImage = `url(${circus.imgs[circus.count%circus.imgs.length]})`, 3000)
+    //   circus.count++
+    //   loop()
+    // }
+    // loop()
   }
   const circusSwitch = () => {
     circus.count++
