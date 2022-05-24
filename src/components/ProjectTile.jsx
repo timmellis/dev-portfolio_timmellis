@@ -16,7 +16,10 @@ function ProjectTile(props) {
 
       <div className='project-info-block'>
       
-        <h4>{props.title}</h4>
+        {props.logo.url ? <div style={{background:props.logo.backgroud}}><img src={require(`../assets/${props.logo.url}`)} alt='project logo' style={{maxWidth:'250px', filter:'brightness(2)'}} /></div>
+          :
+          <h4>{props.title}</h4>
+        }
         <div className='project-tile-description'>
           <p>{props.description}</p>
           <p>{props.summary}</p>

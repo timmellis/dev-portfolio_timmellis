@@ -26,6 +26,7 @@ const NavMenu = () => {
 
             <Nav.Link href='/' id='nav-home' onClick={(e)=>scrollTo(e, 'home')}>Home</Nav.Link>
             <Nav.Link href='/' id='nav-about'  onClick={(e)=>scrollTo(e, 'about')}>About</Nav.Link>
+            <Nav.Link href='/' id='nav-skills'  onClick={(e)=>scrollTo(e, 'skills')}>Skills</Nav.Link>
             <Nav.Link href='/' id='nav-projects' onClick={(e)=>scrollTo(e, 'projects')}>Projects</Nav.Link>
             <Nav.Link href='/' id='nav-contact' onClick={(e)=>scrollTo(e, 'contact')}>Contact</Nav.Link>
             <Nav.Link href='/' id='nav-resume' onClick={(e)=>scrollTo(e, 'contact')}>Resume</Nav.Link>

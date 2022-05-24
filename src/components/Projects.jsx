@@ -50,7 +50,11 @@ function Projects(props) {
       img: 'GreenThumb.jpg',
       skills: ['html','css','js','react','node','bootstrap','django','python','postgres','simpleJWT'],
       url: 'https://timmellis-greenthumb.netlify.app/',
-      github: 'https://github.com/timmellis/green_thumb_frontend' 
+      github: 'https://github.com/timmellis/green_thumb_frontend',
+      // logo: {
+      //   url: 'logo_text.greenthumb.png',
+      //   background: 'rgba(255,255,255,.5)'
+      // } 
     },
 
   ]
@@ -77,6 +81,7 @@ function Projects(props) {
             skills={project.skills}
             url={project.url}
             github={project.github}
+            logo={project.logo ? project.logo : false}
             />
           </Fade>
         </Row>

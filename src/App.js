@@ -7,8 +7,8 @@ import Home from './components/Home'
 import Header from './components/Header'
 import Footer from './components/Footer'
 import About from './components/About'
+import Skills from './components/Skills'
 import Projects from './components/Projects'
-import Resume from './components/Resume'
 import Contact from './components/Contact'
 import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
@@ -31,8 +31,8 @@ function App() {
       <main className="App-main">
         <Home id='home' />
         <About id='about' />
+        <Skills id='skills' />
         <Projects id='projects' />
-        {/* <Resume id='resume' /> */}
         <Contact id='contact' />
 
         {/* <Footer /> */}

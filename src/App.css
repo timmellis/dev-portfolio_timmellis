@@ -4,6 +4,8 @@
   --link-color: #289ab9;
 
   --nav-height: -40px;
+
+  --iama-scroll-speed: 30s;
 }
 
 /* Scrollbar width */
@@ -180,7 +182,7 @@ img {
 }
 .home-container h3 {
   margin: 0;
-  margin-bottom: -8px;
+  margin-bottom: -4px;
   letter-spacing: 6px;
 } 
 .home-container h5 {
@@ -202,7 +204,7 @@ img {
   position: relative;
 }
 .iama-list {
-  height: 5.8em;
+  height: 6.8em;
   overflow: hidden;
   opacity: 35%;
   position: relative;
@@ -219,6 +221,46 @@ img {
   font-weight:bold;
   text-shadow: 0 0 25px white;
 }
+
+
+
+
+/* .iama-list div {
+  text-align: justify;
+  letter-spacing: 3px;
+  line-height: 1.3em;
+  transform: translateY(0%);
+  animation: scroll-animation 60s ease-out alternate infinite;
+}
+@keyframes scroll-animation {
+  from {transform: translateY(0%)}
+  to {transform: translateY(calc(5.8em - 100%))}
+} */
+
+.iama-list div {
+  text-align: justify;
+  text-align-last: justify;
+  letter-spacing: 3px;
+  line-height: 1.3em;
+}
+
+.iama-list div.scroll1 {
+  animation: scroll-animation1 var(--iama-scroll-speed) linear infinite;
+}
+.iama-list div.scroll2 {
+  animation: scroll-animation2 var(--iama-scroll-speed) linear infinite;
+  animation-delay: calc(var(--iama-scroll-speed) / 2);
+}
+@keyframes scroll-animation1 {
+  from {transform: translateY(60%)}
+  to {transform: translateY(-140%)}
+}
+@keyframes scroll-animation2 {
+  from {transform: translateY(-40%)}
+  to {transform: translateY(-240%)}
+}
+/* Credit: based on example from https://codepen.io/iskadar/pen/zLQjLe?editors=1100 */
+
 @media (max-width: 768px) {
   .home-block-center {
     max-width: 99%;
@@ -231,26 +273,22 @@ img {
   .iama-list {
     font-size: .65rem;
   }
+  @keyframes scroll-animation1 {
+  from {transform: translateY(40%)}
+  to {transform: translateY(-160%)}
+}
+@keyframes scroll-animation2 {
+  from {transform: translateY(-60%)}
+  to {transform: translateY(-260%)}
+}
+
 }
 
 
 
-.iama-list div {
-  text-align: justify;
-  letter-spacing: 3px;
-  line-height: 1.3em;
-  /* display: inline; */
-  transform: translateY(0%);
-  animation: scroll-animation 60s ease-out alternate infinite;
-}
-@keyframes scroll-animation {
-  from {transform: translateY(0%)}
-  to {transform: translateY(calc(5.8em - 100%))}
-}
 
-
-
-.about-container, .contact-container {
+/* ABOUT PAGE */
+.about-container, .skills-container, .contact-container {
   padding: 2em;
   display: flex;
   flex-direction: column;
@@ -320,6 +358,21 @@ a.about-circus-hover, a.about-circus-hover:visited {
     font-size: .9em;
   }
 }
+
+/* SKILLS PAGE */
+.skills-info {
+  margin-top: 16px;
+}
+.list-group-item {
+  color: inherit;
+  background: rgba(0,0,0,.2);
+  padding: .33em;
+}
+.list-header {
+  background: rgba(255,255,255,.2);
+  text-transform: uppercase;
+}
+
 
 
 .projects-container {
