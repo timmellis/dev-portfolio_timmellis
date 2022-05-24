@@ -15,7 +15,7 @@ function Home(props) {
 
       <div className='block-center home-block-center block-shift-by-nav'>
         <Fade bottom delay='50'>
-          <h3>Hello there. I'm</h3>
+          <h3>Hello. I'm</h3>
         </Fade>
         <Fade bottom delay='150'>
           <h1>Tim Ellis.</h1>
