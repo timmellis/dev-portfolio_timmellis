@@ -1,5 +1,5 @@
 import React from 'react';
-// import {useNavigate} from 'react-router-dom'
+import {useNavigate, Link} from 'react-router-dom'
 import {Navbar, Nav, Container} from 'react-bootstrap'
 import splitlogo64 from '../assets/split-logo-64.png' 
 import Tlogo from '../assets/T-logo.png' 
@@ -7,29 +7,38 @@ import Tkeylogo from '../assets/T-key-logo.png'
 
 const NavMenu = () => {
 
-  // const navigate = useNavigate()
+  const navigate = useNavigate()
 
   const scrollTo = (e, ref) => {
     e.preventDefault()
-    document.getElementById(ref).scrollIntoView()
+    let time = 50
+    if(window.location.href !== window.location.origin && window.location.href !== window.location.origin+"/") {
+      time=100 
+      navigate("/")
+      
+    }
+    window.setTimeout(()=>document.getElementById(ref).scrollIntoView(),time)
   }
 
   return (
     <Navbar collapseOnSelect expand="md" variant='dark'>
       <Container>
         <Navbar.Brand>
-          <img src={Tkeylogo} height='25px' style={{transform:'translateY(-25%)', opacity:'90%'}} /> im Ellis
+          <span onClick={()=>navigate('/') }>
+            <img alt='T icon' src={Tkeylogo} height='25px' style={{transform:'translateY(-25%)', opacity:'90%'}} /> im Ellis
+          </span>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls='responsive-navbar-nav' />
         <Navbar.Collapse className='justify-content-end' id='responsive-navbar-nav'>
           <Nav className='justify-content-end align-items-center nav-container'>
 
-            <Nav.Link href='/' id='nav-home' onClick={(e)=>scrollTo(e, 'home')}>Home</Nav.Link>
-            <Nav.Link href='/' id='nav-about'  onClick={(e)=>scrollTo(e, 'about')}>About</Nav.Link>
-            <Nav.Link href='/' id='nav-skills'  onClick={(e)=>scrollTo(e, 'skills')}>Skills</Nav.Link>
-            <Nav.Link href='/' id='nav-projects' onClick={(e)=>scrollTo(e, 'projects')}>Projects</Nav.Link>
-            <Nav.Link href='/' id='nav-contact' onClick={(e)=>scrollTo(e, 'contact')}>Contact</Nav.Link>
-            <Nav.Link href='/' id='nav-resume' onClick={(e)=>scrollTo(e, 'contact')}>Resume</Nav.Link>
+            <Nav.Link id='nav-home' onClick={(e)=>scrollTo(e, 'home') }>Home</Nav.Link>
+            <Nav.Link id='nav-about'  onClick={(e)=>scrollTo(e, 'about') }>About</Nav.Link>
+            <Nav.Link id='nav-skills'  onClick={(e)=>scrollTo(e, 'skills')}>Skills</Nav.Link>
+            <Nav.Link id='nav-projects' onClick={(e)=>scrollTo(e, 'projects')}>Projects</Nav.Link>
+            <Nav.Link id='nav-contact' onClick={(e)=>scrollTo(e, 'contact')}>Contact</Nav.Link>
+            <Nav.Link id='nav-resume' onClick={(e)=>scrollTo(e, 'contact')}>Resume</Nav.Link>
+            <Nav.Link id='nav-blog' onClick={(e)=>navigate("/blog")}>Blog</Nav.Link>
             <Container>
 
               {/* github svg */}

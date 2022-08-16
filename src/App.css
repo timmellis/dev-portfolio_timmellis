@@ -134,7 +134,8 @@ img {
 .App-header, .App-footer {
   width:100vw;
   }
-.nav-container a {
+
+  .nav-container a {
   padding: 0 12px;
   font-size: .85em;
   /* font-weight:bold; */
@@ -142,7 +143,9 @@ img {
   cursor: pointer;
   transition: all .15s ease-in-out;
 }
-
+.navbar-brand {
+  cursor: pointer;
+}
 .nav-container span svg {
   height:28px;
   width: 28px;
